@@ -54,33 +54,32 @@
         .banner {
             display: flex;
             align-items: center;
-            justify-content: center;
-            /* Alterado para center */
+            justify-content: space-between;
             background-color: #000;
             border-radius: 15px;
             overflow: hidden;
             padding: 40px;
             margin-bottom: 40px;
             min-height: 400px;
-            /* Reduzido */
             position: relative;
         }
 
         .banner-content {
             flex: 0 1 50%;
-            /* Alterado para controlar melhor o espaço */
             padding-right: 20px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
 
         .banner-content::after {
             display: none;
-            /* Removendo a linha vertical */
         }
 
         .banner-text {
             max-width: 500px;
-            padding-right: 40px;
         }
 
         .logo-text {
@@ -90,7 +89,6 @@
             text-transform: uppercase;
             font-weight: bold;
             line-height: 1.2;
-            white-space: nowrap;
         }
 
         .discount-text {
@@ -98,7 +96,6 @@
             color: white;
             margin: 15px 0;
             line-height: 1.3;
-            white-space: nowrap;
         }
 
         .banner-description {
@@ -110,19 +107,17 @@
         .banner-image-container {
             flex: 0 1 50%;
             display: flex;
-            justify-content: flex-start;
-            /* Alterado para flex-start */
             align-items: center;
-            max-width: 50%;
+            justify-content: center;
+            height: 100%;
         }
 
         .banner-image {
             max-height: 400px;
-            /* Reduzido */
-            max-width: 100%;
             width: auto;
-            height: auto;
+            height: 100%;
             object-fit: contain;
+            object-position: center;
         }
 
         .btn {
@@ -136,6 +131,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             margin-top: 20px;
+            align-self: flex-start;
         }
 
         .btn:hover {
@@ -147,7 +143,6 @@
             padding: 40px 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            /* Alterado para 2 colunas */
             gap: 30px;
             margin: 0 auto;
             max-width: 1200px;
@@ -156,7 +151,6 @@
         @media (max-width: 768px) {
             .servicos {
                 grid-template-columns: 1fr;
-                /* Uma coluna em telas menores */
             }
         }
 
@@ -208,43 +202,44 @@
                 flex-direction: column;
                 padding: 20px;
                 text-align: center;
+                min-height: auto;
             }
 
             .banner-content {
                 flex: 1 1 100%;
                 padding-right: 0;
                 margin-bottom: 30px;
-            }
-
-            .banner-content::after {
-                display: none;
+                align-items: center;
             }
 
             .banner-text {
                 margin: 0 auto;
                 padding-right: 0;
+                text-align: center;
             }
 
             .logo-text {
                 font-size: 2rem;
-                white-space: normal;
             }
 
             .discount-text {
                 font-size: 1.5rem;
-                white-space: normal;
             }
 
             .banner-image-container {
                 flex: 1 1 100%;
                 width: 100%;
-                text-align: center;
+                height: auto;
             }
 
             .banner-image {
                 max-height: 350px;
                 max-width: 90%;
                 height: auto;
+            }
+
+            .btn {
+                align-self: center;
             }
         }
     </style>
@@ -275,7 +270,7 @@
                     </div>
                 </div>
                 <div class="banner-image-container">
-                    <img src="Imagens/banner.jpg" alt="Banner da academia" class="banner-image">
+                    <img src="Imagens/banner.jpg" alt="Pessoas se exercitando na academia" class="banner-image">
                 </div>
             </section>
         </header>
